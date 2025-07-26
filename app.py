@@ -6,7 +6,7 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}})
+CORS(app, resources={r"/*": {"origins": "https://customer-request-classifier.onrender.com"}})
 model = joblib.load('model/model.pkl')
 vectorizer = joblib.load('model/vectorizer.pkl')
 
