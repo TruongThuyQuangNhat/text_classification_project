@@ -6,3 +6,4 @@ matplotlib
 seaborn
 flask
 joblib
+flask_cors
