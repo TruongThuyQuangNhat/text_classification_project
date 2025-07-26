@@ -3,6 +3,7 @@ import joblib
 import re
 from pyvi import ViTokenizer
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}})
@@ -27,4 +28,6 @@ def predict():
     return jsonify({'label': prediction})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
